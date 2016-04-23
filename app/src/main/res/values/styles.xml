@@ -8,5 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ButtonText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorButton</item>
+    </style>
+
+    <style name="TitleText">
+        <item name="android:textSize">45sp</item>
+        <item name="android:textColor">@color/colorFont</item>
+    </style>
 
 </resources>

@@ -6,5 +6,6 @@
     <color name="colorFacilitatorBtn">#6bec9c</color>
     <color name="colorDriverBtn">#60aae7</color>
     <color name="colorObserverBtn">#fc0d1b</color>
-
+    <color name="colorFont">#737373</color>
+    <color name="colorButton">#000000</color>
 </resources>

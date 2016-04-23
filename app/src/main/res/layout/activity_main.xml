@@ -7,11 +7,13 @@
     android:orientation="vertical">
 
     <TextView
-        style:"@styles/"
+        android:textAppearance="@style/TitleText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/app_name"
+        android:textAlignment="center"
+        android:layout_marginTop="25dp"
         />
 
     <EditText
@@ -25,6 +27,7 @@
         android:imeOptions="actionNone" />
 
     <Button
+        style="?android:attr/borderlessButtonStyle"
         android:id="@+id/facilitator_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -32,9 +35,11 @@
         android:layout_margin="10dp"
         android:text="@string/facilitator_btn"
         android:background="@drawable/facilitatorbtn"
+        android:textAppearance="@style/ButtonText"
         android:textAllCaps="false"/>
 
     <Button
+        style="?android:attr/borderlessButtonStyle"
         android:id="@+id/driver_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -42,9 +47,11 @@
         android:layout_margin="10dp"
         android:text="@string/driver_btn"
         android:background="@drawable/driverbtn"
-        android:textAllCaps="false" />
+        android:textAppearance="@style/ButtonText"
+        android:textAllCaps="false"/>
 
     <Button
+        style="?android:attr/borderlessButtonStyle"
         android:id="@+id/observer_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -52,6 +59,7 @@
         android:layout_margin="10dp"
         android:text="@string/observer_btn"
         android:background="@drawable/observerbtn"
+        android:textAppearance="@style/ButtonText"
         android:textAllCaps="false"/>
 
 
