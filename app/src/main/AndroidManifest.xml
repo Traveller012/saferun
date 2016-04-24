@@ -53,7 +53,13 @@
         <activity android:name=".FinalSummary" />
         <activity
             android:name=".DriverMapView"
-            android:label="@string/title_activity_driver_map_view"></activity>
+            android:label="@string/title_activity_driver_map_view" />
+        <activity
+            android:name=".ObserverInPosition"
+            android:label="@string/title_activity_observer_in_position" />
+        <activity
+            android:name=".ObserverMapView"
+            android:label="@string/title_activity_observer_map_view"></activity>
     </application>
 
 </manifest>
