@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/join_run_driver"
+        android:text="@string/join_run"
         android:background="@drawable/driverbtn"
         android:textAppearance="@style/DriverButtonText"
         android:textAllCaps="false"
