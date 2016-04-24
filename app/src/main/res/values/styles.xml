@@ -52,4 +52,16 @@
         <item name="android:textColor">@color/colorBlueText</item>
     </style>
 
+    <style name="AllCaps">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Warning">
+        <item name="android:textSize">75sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

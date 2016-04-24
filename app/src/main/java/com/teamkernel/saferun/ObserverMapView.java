@@ -31,6 +31,11 @@ public class ObserverMapView extends FragmentActivity implements OnMapReadyCallb
         startActivity(intent);
     }
 
+    public void observerInPosition(View view){
+        TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
+        text.setText("Time Elapsed: ");
+    }
+
     public void observerCreateEmergency(View view) {
         TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
         text.setText("Driver Notified!");

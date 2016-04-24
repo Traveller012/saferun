@@ -19,9 +19,9 @@
         android:textAppearance="@style/BackButton"
         android:textAllCaps="false"
         android:enabled="true"
+        android:onClick="goBackToMain"
         />
-    <!--ADD THIS LATER TO JAVA -->
-    <!--android:onClick="backToMain"-->
+
     <TextView
         android:id="@+id/facilitator_header"
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/driver_role_description"
+        android:id="@+id/facilitator_role_description"
         android:layout_width="match_parent"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"

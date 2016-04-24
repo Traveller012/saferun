@@ -7,36 +7,51 @@
     android:orientation="vertical">
 
     <TextView
-        android:textAppearance="@style/TitleText"
+        android:textAppearance="@style/SmallText"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:text="@string/facilitator_name"
-        android:layout_marginTop="25dp"
+        android:textAlignment="center"
         />
 
 
     <Button
         style="?android:attr/borderlessButtonStyle"
         android:id="@+id/end_run_back_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight=".5"
         android:layout_margin="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="top"
         android:text="@string/go_back_button"
-        android:background="@drawable/biggreenbtn"
-        android:textAppearance="@style/BigGreenButtonText"
+        android:background="@drawable/backbtn"
+        android:textAppearance="@style/BackButton"
         android:textAllCaps="false"
         android:onClick="goBackToRun"
         android:enabled="true"/>
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/end_run_question"
+        android:layout_marginTop="25dp"
+        android:textAppearance="@style/Warning"
+        android:textAlignment="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
 
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/end_run_warning"
-        android:layout_marginTop="25dp"
+        android:textAppearance="@style/AllCaps"
+        android:textAlignment="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         />
 
     <Button
@@ -47,8 +62,8 @@
         android:layout_weight="1"
         android:layout_margin="10dp"
         android:text="@string/confirm_end_run_button"
-        android:background="@drawable/biggreenbtn"
-        android:textAppearance="@style/BigGreenButtonText"
+        android:background="@drawable/bigredbtn"
+        android:textAppearance="@style/BigRedButtonText"
         android:textAllCaps="false"
         android:onClick="endRun"
         android:enabled="true"/>

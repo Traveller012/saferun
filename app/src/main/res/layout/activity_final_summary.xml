@@ -7,12 +7,11 @@
     android:orientation="vertical">
 
     <TextView
-        android:textAppearance="@style/TitleText"
+        android:textAppearance="@style/SmallText"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:text="@string/facilitator_name"
-        android:layout_marginTop="25dp"
+        android:textAlignment="center"
         />
 
     <TextView
@@ -22,36 +21,34 @@
         android:layout_weight="1"
         android:text="@string/run_completed"
         android:layout_marginTop="25dp"
+        android:textAlignment="center"
         />
 
     <TextView
         android:id="@+id/total_time"
-        android:textAppearance="@style/TitleText"
+        android:textAppearance="@style/DescText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/total_time"
-        android:layout_marginTop="25dp"
         />
 
     <TextView
         android:id="@+id/observers_list"
-        android:textAppearance="@style/TitleText"
+        android:textAppearance="@style/DescText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/observers_list"
-        android:layout_marginTop="25dp"
         />
 
     <TextView
         android:id="@+id/drivers_list"
-        android:textAppearance="@style/TitleText"
+        android:textAppearance="@style/DescText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/observers_list"
-        android:layout_marginTop="25dp"
         />
 
     <Button
@@ -59,11 +56,11 @@
         android:id="@+id/final_summary_exit_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:layout_margin="10dp"
         android:text="@string/final_exit_button"
-        android:background="@drawable/biggreenbtn"
-        android:textAppearance="@style/BigGreenButtonText"
+        android:background="@drawable/bigbluebtn"
+        android:textAppearance="@style/BigBlueButtonText"
         android:textAllCaps="false"
         android:onClick="finalExit"
         android:enabled="true"/>

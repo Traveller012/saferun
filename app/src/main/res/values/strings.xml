@@ -15,9 +15,10 @@
     <string name="facilitator_name">Facilitator Name: </string>
     <string name="end_run">End Run</string>
     <string name="restart_time">Restart Time</string>
-    <string name="elapsed_time">Elapsed Time</string>
+    <string name="elapsed_time">Elapsed Time: </string>
     <string name="exit_run_warning">Exit?\nRejoining this run will not be possible</string>
-    <string name="end_run_warning">End Run?\nAll Observers and Drivers will be notified</string>
+    <string name="end_run_question">End Run?</string>
+    <string name="end_run_warning">All Observers and Drivers will be notified</string>
     <string name="confirm_end_run_button">Yes</string>
     <string name="confirm_exit_run_button">Yes</string>
     <string name="go_back_button">Back</string>
@@ -28,20 +29,19 @@
     <string name="final_exit_button">Exit</string>
     <string name="join_run">Join Run</string>
     <string name="title_activity_driver_map_view">Map</string>
-    <string name="driver_list_header">Drivers</string>
+    <string name="driver_list_header">Driver</string>
     <string name="choice1">Dummy Text</string>
     <string name="choice2">Dummy Text</string>
-    <string name="driver_role_desc">Description of the Driver Role. \n
-                                    Description of the Driver Role. \n
-                                    Description of the Driver Role. \n
-                                    Description of the Driver Role. \n
+    <string name="driver_role_desc">Description of the Driver Role.
+                                    Description of the Driver Role.
+                                    Description of the Driver Role.
+                                    Description of the Driver Role.
                                     Description of the Driver Role. </string>
     <string name="driver_resolve_emergency">Resolve Emergency</string>
     <string name="observer_list_header">Observers</string>
-    <string name="observer_role_desc">Description of the Observer Role. \n
-                                    Description of the Observer Role. \n
-                                    Description of the Observer Role. \n
-                                    Description of the Observer Role. \n
+    <string name="observer_role_desc">Description of the Observer Role.
+                                    Description of the Observer Role.
+                                    Description of the Observer Role.
                                     Description of the Observer Role. </string>
     <string name="facilitator_role_desc">Description of the Facilitator Role.
                                     Description of the Facilitator Role.

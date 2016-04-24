@@ -6,50 +6,72 @@
     android:gravity="center"
     android:orientation="vertical">
 
+
+
     <TextView
-        android:textAppearance="@style/TitleText"
+        android:textAppearance="@style/SmallText"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:text="@string/facilitator_name"
-        android:layout_marginTop="25dp"
+        android:textAlignment="center"
         />
 
-    <Button
-        style="?android:attr/borderlessButtonStyle"
-        android:id="@+id/driver_exit_run_button"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="10dp"
-        android:text="@string/exit"
-        android:background="@drawable/biggreenbtn"
-        android:textAppearance="@style/BigGreenButtonText"
-        android:textAllCaps="false"
-        android:onClick="exitRunConfirmation"
-        android:enabled="true"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <Button
-        style="?android:attr/borderlessButtonStyle"
-        android:id="@+id/restart_time"
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/driver_exit_run_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".75"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/exit"
+            android:background="@drawable/bigredbtn"
+            android:textAppearance="@style/BigRedButtonText"
+            android:textAllCaps="false"
+            android:onClick="exitRunConfirmation"
+            android:enabled="true"/>
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/restart_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/driver_resolve_emergency"
+            android:background="@drawable/biggreenbtn"
+            android:textAppearance="@style/BigGreenButtonText"
+            android:textAllCaps="false"
+            android:onClick="driverResolveEmergency"
+            android:enabled="true"/>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="10dp"
-        android:text="@string/driver_resolve_emergency"
-        android:background="@drawable/biggreenbtn"
-        android:textAppearance="@style/BigGreenButtonText"
-        android:textAllCaps="false"
-        android:onClick="driverResolveEmergency"
-        android:enabled="true"/>
+        android:layout_weight="5"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        />
 
     <TextView
-        android:textAppearance="@style/TitleText"
+        android:textAppearance="@style/MediumText"
+        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:text="@string/elapsed_time"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         />
 
 </LinearLayout>
