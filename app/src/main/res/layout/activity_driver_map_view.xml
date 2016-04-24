@@ -23,8 +23,8 @@
         android:layout_weight="1"
         android:layout_margin="10dp"
         android:text="@string/exit"
-        android:background="@drawable/facilitatorbtn"
-        android:textAppearance="@style/FacilitatorButtonText"
+        android:background="@drawable/biggreenbtn"
+        android:textAppearance="@style/BigGreenButtonText"
         android:textAllCaps="false"
         android:onClick="exitRunConfirmation"
         android:enabled="true"/>
@@ -37,8 +37,8 @@
         android:layout_weight="1"
         android:layout_margin="10dp"
         android:text="@string/driver_resolve_emergency"
-        android:background="@drawable/facilitatorbtn"
-        android:textAppearance="@style/FacilitatorButtonText"
+        android:background="@drawable/biggreenbtn"
+        android:textAppearance="@style/BigGreenButtonText"
         android:textAllCaps="false"
         android:onClick="driverResolveEmergency"
         android:enabled="true"/>

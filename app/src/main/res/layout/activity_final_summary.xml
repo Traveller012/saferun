@@ -62,8 +62,8 @@
         android:layout_weight="1"
         android:layout_margin="10dp"
         android:text="@string/final_exit_button"
-        android:background="@drawable/facilitatorbtn"
-        android:textAppearance="@style/FacilitatorButtonText"
+        android:background="@drawable/biggreenbtn"
+        android:textAppearance="@style/BigGreenButtonText"
         android:textAllCaps="false"
         android:onClick="finalExit"
         android:enabled="true"/>

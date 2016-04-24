@@ -24,8 +24,8 @@
         android:layout_weight="1"
         android:layout_margin="10dp"
         android:text="@string/go_back_button"
-        android:background="@drawable/facilitatorbtn"
-        android:textAppearance="@style/FacilitatorButtonText"
+        android:background="@drawable/biggreenbtn"
+        android:textAppearance="@style/BigGreenButtonText"
         android:textAllCaps="false"
         android:onClick="goBackToRun"
         android:enabled="true"/>
@@ -47,8 +47,8 @@
         android:layout_weight="1"
         android:layout_margin="10dp"
         android:text="@string/confirm_end_run_button"
-        android:background="@drawable/facilitatorbtn"
-        android:textAppearance="@style/FacilitatorButtonText"
+        android:background="@drawable/biggreenbtn"
+        android:textAppearance="@style/BigGreenButtonText"
         android:textAllCaps="false"
         android:onClick="endRun"
         android:enabled="true"/>

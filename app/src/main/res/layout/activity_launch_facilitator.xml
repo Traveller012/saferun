@@ -7,13 +7,54 @@
 
     <Button
         style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/facilitator_back_to_main_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
+        android:layout_margin="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="top"
+        android:text="@string/go_back_button"
+        android:background="@drawable/backbtn"
+        android:textAppearance="@style/BackButton"
+        android:textAllCaps="false"
+        android:enabled="true"
+        />
+    <!--ADD THIS LATER TO JAVA -->
+    <!--android:onClick="backToMain"-->
+    <TextView
+        android:id="@+id/facilitator_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1.75"
+        android:text="@string/facilitator_header"
+        android:textAlignment="center"
+        android:gravity="bottom"
+        android:textAppearance="@style/TitleText">
+    </TextView>
+
+    <TextView
+        android:id="@+id/driver_role_description"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:text="@string/facilitator_role_desc"
+        android:textAppearance="@style/DescText">
+    </TextView>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
         android:id="@+id/organize_new_run_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_margin="20dp"
         android:text="@string/organize_run"
-        android:background="@drawable/driverbtn"
-        android:textAppearance="@style/DriverButtonText"
+        android:background="@drawable/biggreenbtn"
+        android:textAppearance="@style/BigGreenButtonText"
         android:textAllCaps="false"
         android:onClick="organizeRun"
         android:enabled="true"

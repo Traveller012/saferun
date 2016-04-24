@@ -43,8 +43,14 @@
                                     Description of the Observer Role. \n
                                     Description of the Observer Role. \n
                                     Description of the Observer Role. </string>
+    <string name="facilitator_role_desc">Description of the Facilitator Role.
+                                    Description of the Facilitator Role.
+                                    Description of the Facilitator Role.</string>
     <string name="title_activity_observer_in_position">Map</string>
     <string name="observer_in_position">In Position!</string>
     <string name="title_activity_observer_map_view">Map</string>
     <string name="observer_create_emergency">EMERGENCY</string>
+    <string name="facilitator_header">Facilitator</string>
+    <string name="drivers">Drivers</string>
+    <string name="observers">Observers</string>
 </resources>

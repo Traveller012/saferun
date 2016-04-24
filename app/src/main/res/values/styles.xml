@@ -7,28 +7,49 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlNormal">#0099cc</item>
-        <item name="colorControlActivated">@color/accent</item>
-        <item name="colorControlHighlight">@color/accent</item>
+        <item name="colorControlActivated">@color/colorTextEditAccent</item>
+        <item name="colorControlHighlight">@color/colorTextEditAccent</item>
     </style>
 
-    <style name="FacilitatorButtonText">
+    <style name="BigGreenButtonText">
         <item name="android:textSize">25sp</item>
-        <item name="android:textColor">@color/colorFacilitatorTextBtn</item>
+        <item name="android:textColor">@color/colorGreenText</item>
     </style>
 
-    <style name="DriverButtonText">
+    <style name="BigBlueButtonText">
         <item name="android:textSize">25sp</item>
-        <item name="android:textColor">@color/colorDriverTextBtn</item>
+        <item name="android:textColor">@color/colorBlueText</item>
     </style>
 
-    <style name="ObserverButtonText">
+    <style name="BigRedButtonText">
         <item name="android:textSize">25sp</item>
-        <item name="android:textColor">@color/colorObserverTextBtn</item>
+        <item name="android:textColor">@color/colorRedText</item>
     </style>
 
     <style name="TitleText">
         <item name="android:textSize">45sp</item>
-        <item name="android:textColor">@color/colorFont</item>
+        <item name="android:textColor">@color/colorGreyFont</item>
+    </style>
+
+    <style name="MediumText">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/colorGreyFont</item>
+    </style>
+
+
+    <style name="DescText">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/colorGreyFont</item>
+    </style>
+
+    <style name="SmallText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorGreyFont</item>
+    </style>
+
+    <style name="BackButton">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorBlueText</item>
     </style>
 
 </resources>
