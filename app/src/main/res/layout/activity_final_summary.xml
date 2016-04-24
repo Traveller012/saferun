@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:textAppearance="@style/TitleText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/facilitator_name"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:textAppearance="@style/TitleText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/run_completed"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:id="@+id/total_time"
+        android:textAppearance="@style/TitleText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/total_time"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:id="@+id/observers_list"
+        android:textAppearance="@style/TitleText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/observers_list"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:id="@+id/drivers_list"
+        android:textAppearance="@style/TitleText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/observers_list"
+        android:layout_marginTop="25dp"
+        />
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/final_summary_exit_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:text="@string/final_exit_button"
+        android:background="@drawable/facilitatorbtn"
+        android:textAppearance="@style/FacilitatorButtonText"
+        android:textAllCaps="false"
+        android:onClick="finalExit"
+        android:enabled="true"/>
+    </LinearLayout>

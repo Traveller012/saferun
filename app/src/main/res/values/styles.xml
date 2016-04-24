@@ -6,11 +6,24 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">#0099cc</item>
+        <item name="colorControlActivated">@color/accent</item>
+        <item name="colorControlHighlight">@color/accent</item>
     </style>
 
-    <style name="ButtonText">
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/colorButton</item>
+    <style name="FacilitatorButtonText">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/colorFacilitatorTextBtn</item>
+    </style>
+
+    <style name="DriverButtonText">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/colorDriverTextBtn</item>
+    </style>
+
+    <style name="ObserverButtonText">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/colorObserverTextBtn</item>
     </style>
 
     <style name="TitleText">

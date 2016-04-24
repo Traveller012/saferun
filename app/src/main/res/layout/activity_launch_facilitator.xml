@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/organize_new_run_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/organize_run"
+        android:background="@drawable/driverbtn"
+        android:textAppearance="@style/DriverButtonText"
+        android:textAllCaps="false"
+        android:onClick="organizeRun"
+        android:enabled="true"
+        />
+
+</LinearLayout>

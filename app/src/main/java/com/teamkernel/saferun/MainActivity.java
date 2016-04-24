@@ -1,5 +1,6 @@
 package com.teamkernel.saferun;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,9 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mFacilitatorButton;
-    private Button mDriverButton;
-    private Button mObserverButton;
     private String sUsername;
+
+    public final static String EXTRA_USERNAME = "com.teamkernel.saferun.USERNAME";
 
 
     @Override
@@ -19,53 +19,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        mFacilitatorButton = (Button)findViewById(R.id.facilitator_btn);
-        mFacilitatorButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v){
-                checkTextEdit();
-            }
-
-        });
-
-        mDriverButton = (Button)findViewById(R.id.driver_btn);
-        mDriverButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v){
-                checkTextEdit();
-            }
-
-        });
-
-        mObserverButton = (Button) findViewById(R.id.observer_btn);
-        mObserverButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v){
-                checkTextEdit();
-            }
-        });
     }
 
-
-    private void checkTextEdit() {
+    public void selectFacilitator(View view){
         EditText usernameEditText = (EditText) findViewById(R.id.user_name);
         sUsername = usernameEditText.getText().toString();
-
-        if (sUsername.matches("")) {
-            mDriverButton.setEnabled(true);
-            mObserverButton.setEnabled(true);
-            mFacilitatorButton.setEnabled(true);
-
-        } else {
-            mDriverButton.setEnabled(false);
-            mObserverButton.setEnabled(false);
-            mFacilitatorButton.setEnabled(false);
+        if (!sUsername.matches("")) {
+            Intent intent = new Intent(this, LaunchFacilitator.class);
+            intent.putExtra(EXTRA_USERNAME, sUsername);
+            startActivity(intent);
         }
+    }
 
+    public void selectDriver(View view){
+        EditText usernameEditText = (EditText) findViewById(R.id.user_name);
+        sUsername = usernameEditText.getText().toString();
+        if (!sUsername.matches("")) {
+            Intent intent = new Intent(this, LaunchDriver.class);
+            intent.putExtra(EXTRA_USERNAME, sUsername);
+            startActivity(intent);
+        }
+    }
+
+    public void selectObserver(View view){
+        EditText usernameEditText = (EditText) findViewById(R.id.user_name);
+        sUsername = usernameEditText.getText().toString();
+        if (!sUsername.matches("")) {
+            Intent intent = new Intent(this, LaunchObserver.class);
+            intent.putExtra(EXTRA_USERNAME, sUsername);
+            startActivity(intent);
+        }
     }
 
 

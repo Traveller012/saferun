@@ -4,4 +4,26 @@
     <string name="facilitator_btn">Facilitator</string>
     <string name="driver_btn">Driver</string>
     <string name="observer_btn">Observer</string>
+    <string name="title_activity_launch_facilitator">LAUNCHFACILITATOR</string>
+    <string name="organize_run">Organize New Run</string>
+    <string name="start_run">Start Run Time!</string>
+    <string name="exit">Exit</string>
+    <string name="refresh">Refresh</string>
+    <string name="observer_integer">Observers: </string>
+    <string name="driver_integer">Drivers: </string>
+    <string name="title_activity_facilitator_map_view">Map</string>
+    <string name="facilitator_name">Facilitator Name: </string>
+    <string name="end_run">End Run</string>
+    <string name="restart_time">Restart Time</string>
+    <string name="elapsed_time">Elapsed Time</string>
+    <string name="exit_run_warning">Exit?\nRejoining this run will not be possible</string>
+    <string name="end_run_warning">End Run?\nAll Observers and Drivers will be notified</string>
+    <string name="confirm_end_run_button">Yes</string>
+    <string name="confirm_exit_run_button">Yes</string>
+    <string name="go_back_button">Back</string>
+    <string name="go_back_exit_button">Back</string>
+    <string name="run_completed">Run Complete</string>
+    <string name="total_time">Total Time: </string>
+    <string name="observers_list">Observers List: </string>
+    <string name="final_exit_button">Exit</string>
 </resources>
