@@ -26,4 +26,15 @@
     <string name="total_time">Total Time: </string>
     <string name="observers_list">Observers List: </string>
     <string name="final_exit_button">Exit</string>
+    <string name="join_run_driver">Join Run</string>
+    <string name="title_activity_driver_map_view">Map</string>
+    <string name="driver_list_header">Drivers</string>
+    <string name="choice1">Dummy Text</string>
+    <string name="choice2">Dummy Text</string>
+    <string name="driver_role_desc">Description of the Driver Role. \n
+                                    Description of the Driver Role. \n
+                                    Description of the Driver Role. \n
+                                    Description of the Driver Role. \n
+                                    Description of the Driver Role. </string>
+    <string name="driver_resolve_emergency">Resolve Emergency</string>
 </resources>

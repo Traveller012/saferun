@@ -50,7 +50,10 @@
             android:label="@string/title_activity_facilitator_map_view" />
         <activity android:name=".EndRunConfirmation" />
         <activity android:name=".ExitRunConfirmation" />
-        <activity android:name=".FinalSummary"></activity>
+        <activity android:name=".FinalSummary" />
+        <activity
+            android:name=".DriverMapView"
+            android:label="@string/title_activity_driver_map_view"></activity>
     </application>
 
 </manifest>
