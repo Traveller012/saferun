@@ -26,7 +26,7 @@
         android:background="@drawable/facilitatorbtn"
         android:textAppearance="@style/FacilitatorButtonText"
         android:textAllCaps="false"
-        android:onClick="endRunConfirmation"
+        android:onClick="exitRunConfirmation"
         android:enabled="true"/>
 
     <Button

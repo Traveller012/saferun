@@ -8,7 +8,6 @@ import android.view.View;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -33,9 +32,8 @@ public class ObserverInPosition extends FragmentActivity implements OnMapReadyCa
     }
 
     public void observerExitRunConfirmation(View view){
-        Intent intent = new Intent(this, ExitRunConfirmation.class);
+        Intent intent = new Intent(this, ObserverExitRunConfirmation.class);
         startActivity(intent);
-
     }
 
 

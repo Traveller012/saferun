@@ -19,7 +19,7 @@ public class OrganizeNewRun extends AppCompatActivity {
     }
 
     public void exit(View view){
-        Intent intent = new Intent(this, ExitRunConfirmation.class);
+        Intent intent = new Intent(this, FacilitatorExitRunConfirmation.class);
         startActivity(intent);
     }
 

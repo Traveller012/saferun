@@ -48,8 +48,8 @@
         <activity
             android:name=".FacilitatorMapView"
             android:label="@string/title_activity_facilitator_map_view" />
-        <activity android:name=".EndRunConfirmation" />
-        <activity android:name=".ExitRunConfirmation" />
+        <activity android:name=".FacilitatorEndRunConfirmation" />
+        <activity android:name=".FacilitatorExitRunConfirmation" />
         <activity android:name=".FinalSummary" />
         <activity
             android:name=".DriverMapView"
@@ -59,7 +59,9 @@
             android:label="@string/title_activity_observer_in_position" />
         <activity
             android:name=".ObserverMapView"
-            android:label="@string/title_activity_observer_map_view"></activity>
+            android:label="@string/title_activity_observer_map_view" />
+        <activity android:name=".DriverExitRunConfirmation" />
+        <activity android:name=".ObserverExitRunConfirmation"></activity>
     </application>
 
 </manifest>

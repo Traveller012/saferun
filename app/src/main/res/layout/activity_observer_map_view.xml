@@ -40,10 +40,11 @@
         android:background="@drawable/facilitatorbtn"
         android:textAppearance="@style/FacilitatorButtonText"
         android:textAllCaps="false"
-        android:onClick="driverResolveEmergency"
+        android:onClick="observerCreateEmergency"
         android:enabled="true"/>
 
     <TextView
+        android:id="@+id/observer_map_view_bottom_text"
         android:textAppearance="@style/TitleText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
