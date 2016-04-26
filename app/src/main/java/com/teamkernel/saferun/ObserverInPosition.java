@@ -1,8 +1,16 @@
 package com.teamkernel.saferun;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -14,9 +22,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ObserverInPosition extends FragmentActivity implements OnMapReadyCallback {
+public class ObserverInPosition extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
+    protected LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +55,29 @@ public class ObserverInPosition extends FragmentActivity implements OnMapReadyCa
         startActivity(intent);
     }
 
+    @Override
+    public void onLocationChanged(Location location) {
+        Log.d("ss","Latitude:" + location.getLatitude() + ", Longitude:" + location.getLongitude());
+
+        //update in DB
+        MyUtils.updateLocation(location, User.Observer, ObserverInPosition.this);
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+        Log.d("ss","disable");
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+        Log.d("ss","enable");
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+        Log.d("ss","status");
+    }
 
     /**
      * Manipulates the map once available.
@@ -64,5 +96,17 @@ public class ObserverInPosition extends FragmentActivity implements OnMapReadyCa
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
+                && keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+
+            Intent intent = new Intent(this, ObserverExitRunConfirmation.class);
+            startActivity(intent);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

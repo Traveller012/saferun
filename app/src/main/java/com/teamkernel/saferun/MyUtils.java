@@ -1,8 +1,13 @@
 package com.teamkernel.saferun;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
 import com.firebase.client.Firebase;
@@ -83,6 +88,79 @@ public class MyUtils {
         return true;
 
     }
+
+
+    public static boolean removeRun(Context context) {
+
+        String runKey = getValueFromSharedPrefs("runKey", context);
+        if(runKey.trim().isEmpty()){
+            return false;
+        }
+        Firebase myFirebase = rootFirebase.child("/Runs/" + runKey);
+
+        myFirebase.removeValue();
+
+
+        //also remove from ActiveRuns
+        myFirebase = rootFirebase.child("/ActiveRuns/" + runKey);
+
+        myFirebase.removeValue();
+
+
+        return true;
+    }
+
+    public static boolean removeUser(User user, Context context) {
+
+        /*
+            http://saferun.firebaseio.com/Runs/RunKey/Facilitators/FacilitatorKey
+            http://saferun.firebaseio.com/Runs/RunKey/Observers/ObserverKey
+            http://saferun.firebaseio.com/Runs/RunKey/Drivers/DriverKey
+        */
+        String runKey = getValueFromSharedPrefs("runKey", context);
+        if(runKey.trim().isEmpty()){
+            return false;
+        }
+        Firebase myFirebase = rootFirebase.child("/Runs/" + runKey);
+
+        switch (user){
+
+            case Facilitator:
+                String facilitatorKey = getValueFromSharedPrefs("facilitatorKey", context);
+
+                if(facilitatorKey.isEmpty()) return false;
+
+                myFirebase = myFirebase.child("/Facilitators/"+facilitatorKey);
+                break;
+
+            case Observer:
+
+                String observerKey = getValueFromSharedPrefs("observerKey", context);
+
+                if(observerKey.isEmpty()) return false;
+
+                myFirebase = myFirebase.child("/Observers/"+observerKey);
+
+                break;
+
+            case Driver:
+
+                String driverKey = getValueFromSharedPrefs("driverKey", context);
+
+                if(driverKey.isEmpty()) return false;
+
+                myFirebase = myFirebase.child("/Drivers/"+driverKey);
+
+                break;
+        }
+
+        //update data
+        myFirebase.removeValue();
+
+        return true;
+
+    }
+
     public static void createNewActiveRun(Run myRun, Context context) {
 
         //PUT myRun in root/ActiveRuns/RunKey/
@@ -92,6 +170,26 @@ public class MyUtils {
         //insert name and runKey into /ActiveRuns/RunKey/
         myFacilitatorFirebase.setValue(myRun);
 
+    }
+
+
+    public static boolean createNewEmergency(Emergency myEmergency, Context context) {
+
+        String runKey = getValueFromSharedPrefs("runKey", context);
+
+        if(runKey.trim().isEmpty()){
+            return false;
+        }
+
+        //PUT emergency in root/Runs/RunKey/Emergencies
+        Firebase myFirebase = rootFirebase.child("/Runs/"+runKey+"/Emergencies");
+
+        String key = MyUtils.createInFirebase(myEmergency, myFirebase);
+
+        //save facilitatorKey in sharedPref
+        MyUtils.putInSharedPrefs("emergencyKey", key, context);
+
+        return true;
     }
 
     public static String getValueFromSharedPrefs(String key, Context c){
@@ -126,14 +224,63 @@ public class MyUtils {
 
     }
 
-    public static void updateLocation(String latitude, String longitude, Firebase myFirebasePath) {
+    public static boolean updateLocation(Location location, User user, Context context) {
+
+        /*
+            http://saferun.firebaseio.com/Runs/RunKey/Facilitators/FacilitatorKey
+            http://saferun.firebaseio.com/Runs/RunKey/Observers/ObserverKey
+            http://saferun.firebaseio.com/Runs/RunKey/Drivers/DriverKey
+        */
+
+        String runKey = getValueFromSharedPrefs("runKey", context);
+        if(runKey.trim().isEmpty()){
+            return false;
+        }
+        Firebase myFirebase = rootFirebase.child("/Runs/" + runKey);
+
+        switch (user){
+
+            case Facilitator:
+                String facilitatorKey = getValueFromSharedPrefs("facilitatorKey", context);
+
+                if(facilitatorKey.isEmpty()) return false;
+
+                myFirebase = myFirebase.child("/Facilitators/"+facilitatorKey);
+                break;
+
+            case Observer:
+
+                String observerKey = getValueFromSharedPrefs("observerKey", context);
+
+                if(observerKey.isEmpty()) return false;
+
+                myFirebase = myFirebase.child("/Observers/"+observerKey);
+
+                break;
+
+            case Driver:
+
+                String driverKey = getValueFromSharedPrefs("driverKey", context);
+
+                if(driverKey.isEmpty()) return false;
+
+                myFirebase = myFirebase.child("/Drivers/"+driverKey);
+
+                break;
+        }
+
         Map<String, Object> myLocationData = new HashMap<String, Object>();
-        myLocationData.put("lat", latitude);
-        myLocationData.put("long", longitude);
-        myFirebasePath.updateChildren(myLocationData);
+        myLocationData.put("latitude", location.getLatitude());
+        myLocationData.put("longitude", location.getLongitude());
+        myFirebase.updateChildren(myLocationData);
+
+        return true;
     }
 
 
+}
+enum User {
+    Facilitator, Observer, Driver
 }
 
 class Facilitator{
@@ -142,6 +289,9 @@ class Facilitator{
     }
 
     public String name;
+    public String latitude;
+    public String longitude;
+
 
     public Facilitator(String name) {
         this.name = name;
@@ -158,6 +308,9 @@ class Driver{
     }
 
     public String name;
+    public String latitude;
+    public String longitude;
+
 
     public Driver(String name) {
         this.name = name;
@@ -173,6 +326,9 @@ class Observer{
 
     public String name;
     public boolean inPosition;
+    public String latitude;
+    public String longitude;
+
 
     public Observer() {
     }
@@ -204,3 +360,22 @@ class Run {
     public Run() {
     }
 }
+
+
+class Emergency {
+
+    public Emergency(String name, String latitude, String longitude) {
+        this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    //attributes must match the ones stored in firebase
+    public String name;
+    public String latitude;
+    public String longitude;
+
+    public Emergency() {
+    }
+}
+

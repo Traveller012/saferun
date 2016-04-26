@@ -3,6 +3,8 @@ package com.teamkernel.saferun;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -37,6 +39,20 @@ public class FacilitatorMapView extends FragmentActivity implements OnMapReadyCa
 
 
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
+                && keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+            Log.d("ss", "onKeyDown Called");
+
+            Intent intent = new Intent(this, FacilitatorExitRunConfirmation.class);
+            startActivity(intent);
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
     /**
      * Manipulates the map once available.

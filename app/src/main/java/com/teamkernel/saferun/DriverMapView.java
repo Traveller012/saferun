@@ -3,6 +3,8 @@ package com.teamkernel.saferun;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -27,6 +29,7 @@ public class DriverMapView extends FragmentActivity implements OnMapReadyCallbac
     }
 
     public void exitRunConfirmation(View view) {
+
         Intent intent = new Intent(this, DriverExitRunConfirmation.class);
         startActivity(intent);
     }
@@ -35,6 +38,23 @@ public class DriverMapView extends FragmentActivity implements OnMapReadyCallbac
     public void driverResolveEmergency(View view) {
         //dummy method
         //Hi Suhani!!!
+    }
+
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
+                && keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+            Log.d("ss", "onKeyDown Called");
+
+            Intent intent = new Intent(this, DriverExitRunConfirmation.class);
+            startActivity(intent);
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 

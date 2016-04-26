@@ -16,9 +16,9 @@
     <string name="end_run">End Run</string>
     <string name="restart_time">Restart Time</string>
     <string name="elapsed_time">Elapsed Time: </string>
-    <string name="exit_run_warning">Exit?\nRejoining this run will not be possible</string>
+    <string name="exit_run_warning">Exit?\nThis will end the run!</string>
     <string name="end_run_question">End Run?</string>
-    <string name="end_run_warning">All Observers and Drivers will be notified</string>
+    <string name="end_run_warning">All members will be notified</string>
     <string name="confirm_end_run_button">Yes</string>
     <string name="confirm_exit_run_button">Yes</string>
     <string name="go_back_button">Back</string>
