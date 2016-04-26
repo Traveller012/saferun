@@ -184,7 +184,7 @@ public class OrganizeNewRun extends AppCompatActivity {
 
         for (String key : driversMap.keySet()) {
             Log.d("ss", "key: " + key + " value: " + driversMap.get(key));
-            drivers_list+= "<font color='#00FF00'>" + driversMap.get(key).name + "</font>";//green
+            drivers_list+= "<font color='#00FF00'>" + driversMap.get(key).name + "</font><br/>";//green
         }
         drivers_text_view.setText(Html.fromHtml(drivers_list));
 

@@ -69,6 +69,10 @@ public class ObserverMapView extends FragmentActivity implements OnMapReadyCallb
             emergency_button.setText("CLEAR EMERGENCY");
 
 
+            TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
+            text.setText("Driver Notified!\nElapsed Time:");
+
+
         }
         else{
 
@@ -77,11 +81,14 @@ public class ObserverMapView extends FragmentActivity implements OnMapReadyCallb
 
             //reset emergency button
             emergency_button.setText("EMERGENCY");
+
+
+            TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
+            text.setText("Elapsed Time:");
+
         }
 
 
-        TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
-        text.setText("Driver Notified!");
     }
 
 
