@@ -110,6 +110,30 @@ public class MyUtils {
     }
 
 
+    public static boolean removeEmergency(Context context) {
+
+
+        String runKey = getValueFromSharedPrefs("runKey", context);
+
+        if(runKey.trim().isEmpty()){
+            return false;
+        }
+
+        String emergencyKey = getValueFromSharedPrefs("emergencyKey", context);
+        if(emergencyKey.trim().isEmpty()){
+            return false;
+        }
+
+        Firebase myFirebase = rootFirebase.child("/Runs/"+runKey+"/Emergencies/"+emergencyKey);
+
+        myFirebase.removeValue();
+
+        //remove emergency key
+        removeFromSharedPrefs("emergencyKey",context);
+
+        return true;
+    }
+
     public static boolean removeRun(Context context) {
 
         String runKey = getValueFromSharedPrefs("runKey", context);

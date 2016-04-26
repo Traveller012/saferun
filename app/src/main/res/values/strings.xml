@@ -37,7 +37,7 @@
                                     Description of the Driver Role.
                                     Description of the Driver Role.
                                     Description of the Driver Role. </string>
-    <string name="driver_resolve_emergency">Resolve Emergency</string>
+    <string name="driver_resolve_emergency">Clear Emergency</string>
     <string name="observer_list_header">Observers</string>
     <string name="observer_role_desc">Description of the Observer Role.
                                     Description of the Observer Role.
@@ -50,6 +50,7 @@
     <string name="observer_in_position">In Position!</string>
     <string name="title_activity_observer_map_view">Map</string>
     <string name="observer_create_emergency">EMERGENCY</string>
+    <string name="observer_clear_emergency">CLEAR EMERGENCY</string>
     <string name="facilitator_header">Facilitator</string>
     <string name="drivers">Drivers</string>
     <string name="observers">Observers</string>
