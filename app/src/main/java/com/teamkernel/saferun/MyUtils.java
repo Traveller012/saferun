@@ -27,7 +27,12 @@ public class MyUtils {
         String runKey = getValueFromSharedPrefs("runKey", context);
         Firebase myFirebase = rootFirebase.child("/Runs/" + runKey + "/Facilitators");
 
-        String key = MyUtils.createInFirebase(facilitator, myFirebase);
+
+        Firebase myNewFirebase = myFirebase.push(); //get a new push ID
+        String key = myNewFirebase.getKey();
+        //add key to object
+        facilitator.key = key;
+        myNewFirebase.setValue(facilitator); //set object in Firebase
 
         //save facilitatorKey in sharedPref
         MyUtils.putInSharedPrefs("facilitatorKey", key, context);
@@ -44,7 +49,15 @@ public class MyUtils {
 
         Firebase myFirebase = rootFirebase.child("/Runs/" + runKey + "/Drivers");
 
-        String key = MyUtils.createInFirebase(driver, myFirebase);
+
+        Firebase myNewFirebase = myFirebase.push(); //get a new push ID
+        String key = myNewFirebase.getKey();
+
+        //add key to object
+        driver.key = key;
+
+        myNewFirebase.setValue(driver); //set object in Firebase
+
 
         //save facilitatorKey in sharedPref
         MyUtils.putInSharedPrefs("driverKey", key, context);
@@ -63,7 +76,14 @@ public class MyUtils {
 
         Firebase myFirebase = rootFirebase.child("/Runs/" + runKey + "/Observers");
 
-        String key = MyUtils.createInFirebase(observer, myFirebase);
+        Firebase myNewFirebase = myFirebase.push(); //get a new push ID
+        String key = myNewFirebase.getKey();
+
+        //add key to object
+        observer.key = key;
+
+        myNewFirebase.setValue(observer); //set object in Firebase
+
 
         //save facilitatorKey in sharedPref
         MyUtils.putInSharedPrefs("observerKey", key, context);
@@ -184,7 +204,11 @@ public class MyUtils {
         //PUT emergency in root/Runs/RunKey/Emergencies
         Firebase myFirebase = rootFirebase.child("/Runs/"+runKey+"/Emergencies");
 
-        String key = MyUtils.createInFirebase(myEmergency, myFirebase);
+        Firebase myNewFirebase = myFirebase.push(); //get a new push ID
+        String key = myNewFirebase.getKey();
+        //add key to object
+        myEmergency.key = key;
+        myNewFirebase.setValue(myEmergency); //set object in Firebase
 
         //save facilitatorKey in sharedPref
         MyUtils.putInSharedPrefs("emergencyKey", key, context);
@@ -288,6 +312,7 @@ class Facilitator{
     public Facilitator() {
     }
 
+    public String key;
     public String name;
     public String latitude;
     public String longitude;
@@ -307,6 +332,7 @@ class Driver{
     public Driver() {
     }
 
+    public String key;
     public String name;
     public String latitude;
     public String longitude;
@@ -324,6 +350,7 @@ class Driver{
 
 class Observer{
 
+    public String key;
     public String name;
     public boolean inPosition;
     public String latitude;
@@ -371,6 +398,7 @@ class Emergency {
     }
 
     //attributes must match the ones stored in firebase
+    public String key;
     public String name;
     public String latitude;
     public String longitude;
