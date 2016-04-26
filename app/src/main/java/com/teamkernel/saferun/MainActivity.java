@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.firebase.client.Firebase;
 
@@ -19,14 +20,26 @@ public class MainActivity extends AppCompatActivity {
 
     public final static String EXTRA_USERNAME = "com.teamkernel.saferun.USERNAME";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //let this be first
+        Firebase.setAndroidContext(this);
+
+        //clear any run key
+        MyUtils.removeFromSharedPrefs("runKey",this);
+
+
+        //clear any run key
+        String name = MyUtils.getValueFromSharedPrefs("name",this);
+
         EditText usernameEditText = (EditText) findViewById(R.id.user_name);
 
         if (usernameEditText != null) {
+
+            usernameEditText.setText(name, TextView.BufferType.EDITABLE);
 
             usernameEditText.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -45,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-        Firebase.setAndroidContext(this);
 
     }
 

@@ -15,6 +15,50 @@ import java.util.Map;
  */
 public class MyUtils {
 
+    public static Firebase rootFirebase = new Firebase("https://saferun.firebaseio.com");
+
+    public static void createNewFacilitator(Facilitator facilitator, Context context) {
+
+        String runKey = getValueFromSharedPrefs("runKey", context);
+        Firebase myFirebase = rootFirebase.child("/Runs/" + runKey + "/Facilitators");
+
+        String key = MyUtils.createInFirebase(facilitator, myFirebase);
+
+        //save facilitatorKey in sharedPref
+        MyUtils.putInSharedPrefs("facilitatorKey", key, context);
+
+    }
+
+    public static boolean createNewDriver(Driver driver, Context context) {
+
+        String runKey = getValueFromSharedPrefs("runKey", context);
+
+        if(runKey.trim().isEmpty()){
+            return false;
+        }
+
+        Firebase myFirebase = rootFirebase.child("/Runs/" + runKey + "/Drivers");
+
+        String key = MyUtils.createInFirebase(driver, myFirebase);
+
+        //save facilitatorKey in sharedPref
+        MyUtils.putInSharedPrefs("driverKey", key, context);
+
+        return true;
+
+    }
+
+    public static void createNewActiveRun(Run myRun, Context context) {
+
+        //PUT myRun in root/ActiveRuns/RunKey/
+        String runKey = getValueFromSharedPrefs("runKey", context);
+        Firebase myFacilitatorFirebase = rootFirebase.child("/ActiveRuns/"+runKey);
+
+        //insert name and runKey into /ActiveRuns/RunKey/
+        myFacilitatorFirebase.setValue(myRun);
+
+    }
+
     public static String getValueFromSharedPrefs(String key, Context c){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
         String name = preferences.getString(key, "");
@@ -29,11 +73,18 @@ public class MyUtils {
         editor.apply();
     }
 
-    public static String createInFirebase(Map<String, String> data, Firebase myFirebasePath) {
+    public static void removeFromSharedPrefs(String key, Context c) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove(key);
+        editor.apply();
+    }
+
+    public static String createInFirebase(Object data, Firebase myFirebasePath) {
 
         Firebase myNewFirebase = myFirebasePath.push(); //get a new push ID
 
-        myNewFirebase.setValue(data);
+        myNewFirebase.setValue(data); //set object in Firebase
 
         String key = myNewFirebase.getKey();//get key generated for new path
         return key;
@@ -47,4 +98,37 @@ public class MyUtils {
         myFirebasePath.updateChildren(myLocationData);
     }
 
+
+}
+
+class Facilitator{
+
+    public Facilitator() {
+    }
+
+    public String name;
+
+    public Facilitator(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Driver{
+
+    public Driver() {
+    }
+
+    public String name;
+
+    public Driver(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
