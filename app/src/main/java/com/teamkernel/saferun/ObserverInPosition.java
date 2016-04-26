@@ -11,6 +11,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ObserverInPosition extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -26,6 +29,13 @@ public class ObserverInPosition extends FragmentActivity implements OnMapReadyCa
     }
 
     public void observerInPosition(View view){
+
+        //update inPosition as true
+        Map<String, Object> observerData = new HashMap<String, Object>();
+        observerData.put("inPosition", true);
+        MyUtils.updateObserver(observerData, this);
+
+
         Intent intent = new Intent(this, ObserverMapView.class);
         startActivity(intent);
 

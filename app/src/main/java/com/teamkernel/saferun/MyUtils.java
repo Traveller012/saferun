@@ -67,6 +67,22 @@ public class MyUtils {
 
     }
 
+    public static boolean updateObserver(Map<String, Object> observerData, Context context) {
+
+        //get path
+        String runKey = getValueFromSharedPrefs("runKey", context);
+        String observerKey = MyUtils.getValueFromSharedPrefs("observerKey", context);
+        if(runKey.trim().isEmpty() || observerKey.trim().isEmpty()){
+            return false;
+        }
+        Firebase myFirebase = rootFirebase.child("/Runs/" + runKey + "/Observers/" + observerKey);
+
+        //update data
+        myFirebase.updateChildren(observerData);
+
+        return true;
+
+    }
     public static void createNewActiveRun(Run myRun, Context context) {
 
         //PUT myRun in root/ActiveRuns/RunKey/
