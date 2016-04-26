@@ -57,30 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/observer_choice1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/choice1" />
-
-            <RadioButton
-                android:id="@+id/observer_choice2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/choice2" />
-
-            <RadioButton
-                android:id="@+id/observer_choice3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/choice2" />
-
-            <RadioButton
-                android:id="@+id/observer_choice4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/choice2" />
+ 
 
         </RadioGroup>
 

@@ -21,11 +21,7 @@ import com.firebase.client.core.Context;
 import com.firebase.client.snapshot.StringNode;
 
 import java.util.HashMap;
-class Run {
-    //attributes must match the ones stored in firebase
-    public String name;
-    public String runKey;
-}
+
 public class LaunchDriver extends AppCompatActivity {
     Firebase rootFirebase;
     Firebase runsFirebase;
@@ -68,10 +64,10 @@ public class LaunchDriver extends AppCompatActivity {
                     {
                         // Changes the textview's text to "Checked: example radiobutton text"
 
-                        String name = checkedRadioButton.getText().toString();
-                        Log.d("ss", "Checked:" + name);
+                        String facilitator_name = checkedRadioButton.getText().toString();
+                        Log.d("ss", "Checked:" + facilitator_name);
 
-                        String runKey = activeRunsMap.get(name);
+                        String runKey = activeRunsMap.get(facilitator_name);
                         Log.d("ss", "Checked key:" + runKey);
 
                         MyUtils.putInSharedPrefs("runKey",runKey,LaunchDriver.this);

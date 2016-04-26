@@ -48,6 +48,25 @@ public class MyUtils {
 
     }
 
+    public static boolean createNewObserver(Observer observer, Context context) {
+
+        String runKey = getValueFromSharedPrefs("runKey", context);
+
+        if(runKey.trim().isEmpty()){
+            return false;
+        }
+
+        Firebase myFirebase = rootFirebase.child("/Runs/" + runKey + "/Observers");
+
+        String key = MyUtils.createInFirebase(observer, myFirebase);
+
+        //save facilitatorKey in sharedPref
+        MyUtils.putInSharedPrefs("observerKey", key, context);
+
+        return true;
+
+    }
+
     public static void createNewActiveRun(Run myRun, Context context) {
 
         //PUT myRun in root/ActiveRuns/RunKey/
@@ -130,5 +149,42 @@ class Driver{
 
     public String getName() {
         return name;
+    }
+}
+
+
+class Observer{
+
+    public String name;
+    public boolean inPosition;
+
+    public Observer() {
+    }
+
+    public Observer(String name, boolean inPosition) {
+        this.name = name;
+        this.inPosition = inPosition;
+    }
+
+    public boolean getInPosition() {
+        return inPosition;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Run {
+    public Run(String name, String runKey) {
+        this.name = name;
+        this.runKey = runKey;
+    }
+
+    //attributes must match the ones stored in firebase
+    public String name;
+    public String runKey;
+
+    public Run() {
     }
 }
