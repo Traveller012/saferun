@@ -4,12 +4,16 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginRight="25dp"
+    android:layout_marginLeft="25dp">
 
     <TextView
         android:textAppearance="@style/SmallText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight=".7"
+        android:gravity="bottom"
         android:text="@string/facilitator_name"
         android:textAlignment="center"
         />
@@ -18,18 +22,21 @@
         android:textAppearance="@style/TitleText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.25"
         android:text="@string/run_completed"
         android:layout_marginTop="25dp"
         android:textAlignment="center"
+        android:gravity="bottom"
         />
 
     <TextView
         android:id="@+id/total_time"
         android:textAppearance="@style/DescText"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="@string/total_time"
         />
 
@@ -38,18 +45,29 @@
         android:textAppearance="@style/DescText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="@string/observers_list"
+        android:layout_weight="4"
+        android:text="@string/summary_details"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         />
 
-    <TextView
-        android:id="@+id/drivers_list"
-        android:textAppearance="@style/DescText"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="@string/observers_list"
-        />
+<!--TextView
+    android:id="@+id/observers_list"
+    android:textAppearance="@style/DescText"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:text="@string/observers_list"
+    />
+
+<TextView
+    android:id="@+id/drivers_list"
+    android:textAppearance="@style/DescText"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:text="@string/observers_list"
+    /-->
 
     <Button
         style="?android:attr/borderlessButtonStyle"
@@ -59,8 +77,8 @@
         android:layout_weight="1.5"
         android:layout_margin="10dp"
         android:text="@string/final_exit_button"
-        android:background="@drawable/bigbluebtn"
-        android:textAppearance="@style/BigBlueButtonText"
+        android:background="@drawable/biggreenbtn"
+        android:textAppearance="@style/BigGreenButtonText"
         android:textAllCaps="false"
         android:onClick="finalExit"
         android:enabled="true"/>
