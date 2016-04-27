@@ -45,7 +45,7 @@
     </TextView>
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:fillViewport="true"
         android:layout_height="0dp"
         android:layout_weight="2"
