@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -180,6 +182,19 @@ public class LaunchDriver extends AppCompatActivity implements LocationListener 
     public void driverGoBackToMain(View view){
 
         finish();
+
+    }
+
+    public void displayJoinRun(View view) {
+        TextView selectedFacilitator = (TextView) view;
+        String text = selectedFacilitator.getText().toString();
+        String message = "Join " + text + "'s Run!";
+        Button b = new Button(this);
+        b.setText(message);
+       // b.setLayoutParams();
+
+
+
 
     }
 }

@@ -24,9 +24,9 @@
     <string name="go_back_button">Back</string>
     <string name="go_back_exit_button">Back</string>
     <string name="run_completed">Run Complete</string>
-    <string name="total_time">Total Time: </string>
+    <string name="total_time">Time Elapsed: </string>
     <string name="observers_list">Observers List: </string>
-    <string name="final_exit_button">Exit</string>
+    <string name="final_exit_button">Done</string>
     <string name="join_run">Join Run</string>
     <string name="title_activity_driver_map_view">Map</string>
     <string name="driver_list_header">Driver</string>
@@ -38,14 +38,13 @@
                                     Description of the Driver Role.
                                     Description of the Driver Role. </string>
     <string name="driver_resolve_emergency">Clear Emergency</string>
+
     <string name="observer_list_header">Observers</string>
     <string name="observer_role_desc">Description of the Observer Role.
                                     Description of the Observer Role.
                                     Description of the Observer Role.
                                     Description of the Observer Role. </string>
-    <string name="facilitator_role_desc">Description of the Facilitator Role.
-                                    Description of the Facilitator Role.
-                                    Description of the Facilitator Role.</string>
+    <string name="facilitator_role_desc">Description of Role\nDescription of Role\nDescription of Role\nDescription of Role</string>
     <string name="title_activity_observer_in_position">Map</string>
     <string name="observer_in_position">In Position!</string>
     <string name="title_activity_observer_map_view">Map</string>
@@ -54,4 +53,6 @@
     <string name="facilitator_header">Facilitator</string>
     <string name="drivers">Drivers</string>
     <string name="observers">Observers</string>
+    <string name="summary_details">Summary Details\nSummary Details\nSummary Details</string>
+    <string name="select_facilitator">Select Facilitator</string>
 </resources>

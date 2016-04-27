@@ -31,6 +31,11 @@
         <item name="android:textColor">@color/colorGreyFont</item>
     </style>
 
+    <style name="LargeText">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/colorGreyFont</item>
+    </style>
+
     <style name="MediumText">
         <item name="android:textSize">35sp</item>
         <item name="android:textColor">@color/colorGreyFont</item>
@@ -55,7 +60,7 @@
     </style>
 
     <style name="BackButton">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/colorBlueText</item>
     </style>
 
