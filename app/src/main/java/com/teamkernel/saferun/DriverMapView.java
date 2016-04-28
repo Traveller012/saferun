@@ -38,7 +38,7 @@ public class DriverMapView extends FragmentActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
     }
 
-    public void exitRunConfirmation(View view) {
+    public void observerExitRunConfirmation(View view) {
 
         Intent intent = new Intent(this, FacilitatorExitRunConfirmation.class);
         startActivity(intent);
