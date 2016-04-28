@@ -32,11 +32,7 @@
     <string name="driver_list_header">Driver</string>
     <string name="choice1">Dummy Text</string>
     <string name="choice2">Dummy Text</string>
-    <string name="driver_role_desc">Description of the Driver Role.
-                                    Description of the Driver Role.
-                                    Description of the Driver Role.
-                                    Description of the Driver Role.
-                                    Description of the Driver Role. </string>
+    <string name="driver_role_desc">Description of Role. Description of Role. Description of Role.</string>
     <string name="driver_resolve_emergency">Clear Emergency</string>
 
     <string name="observer_list_header">Observers</string>
@@ -61,4 +57,9 @@
     <string name="green_list_names3" color="@color/colorLightGreen"><![CDATA[<font color=#6bec9c>Gail<br>Somdeep<br>Gail<br>Somdeep<br>Gail<br>Somdeep<br>Gail<br>Somdeep<br>Gail<br>Somdeep<br>Gail<br>Somdeep<br>]]></string>
     <string name="red_list_names1" color ="@color/colorRed"><![CDATA[<font color=#fc0d1b>Scott<br>Suhani<br>]]></string>
     <string name="red_list_names2" color="@color/colorRed"><![CDATA[<font color=#fc0d1b>Joe<br>]]></string>
+    <string name="scott">Scott</string>
+    <string name="suhani">Suhani</string>
+    <string name="angela">Angela</string>
+    <string name="khal">Khal</string>
+    <string name="gail">Gail</string>
 </resources>

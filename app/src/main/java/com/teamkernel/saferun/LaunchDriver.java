@@ -29,6 +29,8 @@ import com.firebase.client.ValueEventListener;
 
 import java.util.HashMap;
 
+import static com.teamkernel.saferun.R.color.colorLightGreen;
+
 public class LaunchDriver extends AppCompatActivity implements LocationListener {
     Firebase rootFirebase;
     Firebase runsFirebase;
@@ -42,7 +44,7 @@ public class LaunchDriver extends AppCompatActivity implements LocationListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_driver);
 
-        //clear any run key
+        /*//clear any run key
         MyUtils.removeFromSharedPrefs("runKey", this);
 
         //root Firebase
@@ -108,7 +110,7 @@ public class LaunchDriver extends AppCompatActivity implements LocationListener 
 
             }
 
-        });
+        });*/
 
     }
 
@@ -162,8 +164,12 @@ public class LaunchDriver extends AppCompatActivity implements LocationListener 
 
     public void driverJoinRun(View view) {
 
+        Intent intent = new Intent(this, DriverMapView.class);
+        startActivity(intent);
+
+
         //create driver
-        boolean result = MyUtils.createNewDriver(new Driver(name), this);
+        /*boolean result = MyUtils.createNewDriver(new Driver(name), this);
 
         if (result) {
 
@@ -175,7 +181,7 @@ public class LaunchDriver extends AppCompatActivity implements LocationListener 
         } else {
             //toast user to choose a run first
             Toast.makeText(this, "Please choose a run first", Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
     }
 
@@ -185,15 +191,13 @@ public class LaunchDriver extends AppCompatActivity implements LocationListener 
 
     }
 
-    public void displayJoinRun(View view) {
+    public void setButton(View view) {
+        Button button = (Button) findViewById(R.id.driver_join_run);
         TextView selectedFacilitator = (TextView) view;
         String text = selectedFacilitator.getText().toString();
         String message = "Join " + text + "'s Run!";
-        Button b = new Button(this);
-        b.setText(message);
-       // b.setLayoutParams();
-
-
+        button.setText(message);
+        button.setBackgroundColor(getResources().getColor(colorLightGreen));
 
 
     }
