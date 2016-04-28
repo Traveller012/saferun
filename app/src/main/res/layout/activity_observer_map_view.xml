@@ -27,7 +27,7 @@
             android:id="@+id/observer_exit_run_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".75"
+            android:layout_weight=".5"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="@string/exit"
@@ -42,11 +42,11 @@
             android:id="@+id/observer_create_emergency"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="1.25"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="@string/observer_create_emergency"
-            android:background="@drawable/bigredbtn"
+            android:background="@drawable/bigyellowbtn"
             android:textAppearance="@style/BigRedButtonText"
             android:textAllCaps="false"
             android:onClick="observerCreateEmergency"
@@ -58,20 +58,19 @@
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="12"
         class="com.google.android.gms.maps.SupportMapFragment"
         />
 
-    <TextView
-        android:id="@+id/observer_map_view_bottom_text"
-        android:textAppearance="@style/MediumText"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
+    <Chronometer
+        android:id="@+id/chronometer3"
+        android:textColor="@color/colorGreyFont"
+        android:textAppearance="@style/DescText"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:text="@string/elapsed_time"
-        android:layout_marginTop="5dp"
-        />
+        android:gravity="center"
+        android:layout_weight="2"
+        android:text="Chronometer"/>
 
 </LinearLayout>
 

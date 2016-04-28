@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.SystemClock;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -13,11 +14,13 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -25,26 +28,35 @@ public class ObserverMapView extends FragmentActivity implements OnMapReadyCallb
 
     private GoogleMap mMap;
     protected LocationManager locationManager;
+    Chronometer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_observer_map_view);
+
+
+        timer = (Chronometer) findViewById(R.id.chronometer3);
+        timer.setBase(SystemClock.elapsedRealtime());
+        timer.setFormat("Elapsed Time: %s");
+        timer.start();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        //SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-               // .findFragmentById(R.id.map);
-       // mapFragment.getMapAsync(this);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+               .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
+
 
     public void observerExitRunConfirmation(View view) {
         Intent intent = new Intent(this, ObserverExitRunConfirmation.class);
         startActivity(intent);
     }
 
-    public void observerInPosition(View view){
+   /* public void observerInPosition(View view){
         TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
         text.setText("Time Elapsed: ");
-    }
+    } */
 
     public void observerCreateEmergency(View view) {
 
@@ -52,10 +64,10 @@ public class ObserverMapView extends FragmentActivity implements OnMapReadyCallb
         Button emergency_button = (Button) findViewById(R.id.observer_create_emergency);
 
 
-        if(emergency_button.getText().toString().equalsIgnoreCase("EMERGENCY")){
+        if(emergency_button.getText().toString().equalsIgnoreCase("EMERGENCY!")){
 
             //create the emergency
-            String name = MyUtils.getValueFromSharedPrefs("name",this);
+            /*String name = MyUtils.getValueFromSharedPrefs("name",this);
             Location location = getMyLocation();
 
             if(location==null){
@@ -63,28 +75,28 @@ public class ObserverMapView extends FragmentActivity implements OnMapReadyCallb
                 return;//something is wrong
             }
 
-            MyUtils.createNewEmergency(new Emergency(name,location.getLatitude()+"",location.getLongitude()+""),this);
+            MyUtils.createNewEmergency(new Emergency(name,location.getLatitude()+"",location.getLongitude()+""),this); */
 
             //if "Create Emergency"
-            emergency_button.setText("CLEAR EMERGENCY");
+            emergency_button.setText("Clear Emergency");
 
 
-            TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
-            text.setText("Driver Notified!\nElapsed Time:");
+            /*TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
+            text.setText("Driver Notified!\nElapsed Time:");*/
 
 
         }
         else{
 
             //clear the emergency
-            MyUtils.removeEmergency(this);
+          /*  MyUtils.removeEmergency(this);*/
 
             //reset emergency button
-            emergency_button.setText("EMERGENCY");
+            emergency_button.setText("Emergency!");
 
 
-            TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
-            text.setText("Elapsed Time:");
+            /*TextView text = (TextView)findViewById(R.id.observer_map_view_bottom_text);
+            text.setText("Elapsed Time:");*/
 
         }
 
@@ -142,9 +154,9 @@ public class ObserverMapView extends FragmentActivity implements OnMapReadyCallb
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng sydney = new LatLng(40.809527, -73.960269);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("You are here"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,16));
     }
 
     @Override

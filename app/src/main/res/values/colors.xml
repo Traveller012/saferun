@@ -10,6 +10,7 @@
     <color name="colorLightGreen">#6bec9c</color>
     <color name="colorLightBlue">#60aae7</color>
     <color name="colorRed">#fc0d1b</color>
+    <color name="colorYellow">#fffd38</color>
 
     <!-- TEXT COLORS -->
     <color name="colorGreenText">#316b48</color>
