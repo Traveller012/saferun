@@ -48,7 +48,7 @@ public class DriverMapView extends FragmentActivity implements OnMapReadyCallbac
     public void driverResolveEmergency(View view) {
 
         //assuming emergency key is set
-        MyUtils.removeEmergency(this);
+        //MyUtils.removeEmergency(this);
 
     }
 
