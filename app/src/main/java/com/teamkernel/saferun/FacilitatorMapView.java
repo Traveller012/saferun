@@ -26,8 +26,8 @@ public class FacilitatorMapView extends FragmentActivity implements OnMapReadyCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facilitator_map_view);
 
-
         timer = (Chronometer) findViewById(R.id.chronometer1);
+        timer.setBase(SystemClock.elapsedRealtime());
         timer.setFormat("Elapsed Time: %s");
         timer.start();
 
@@ -38,8 +38,13 @@ public class FacilitatorMapView extends FragmentActivity implements OnMapReadyCa
     }
 
     public void endRunConfirmation(View view){
+
+
+            long elapsedMillis = SystemClock.elapsedRealtime() - timer.getBase();
             Intent intent = new Intent(this, FacilitatorEndRunConfirmation.class);
-            //intent.putExtra(EXTRA_USERNAME, sUsername);
+            Bundle b = new Bundle();
+            b.putLong("elapsed_time", elapsedMillis);
+            intent.putExtras(b);
             startActivity(intent);
     }
 
