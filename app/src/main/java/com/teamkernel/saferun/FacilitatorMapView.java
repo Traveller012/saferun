@@ -1,6 +1,7 @@
 package com.teamkernel.saferun;
 
 import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,7 +44,7 @@ public class FacilitatorMapView extends FragmentActivity implements OnMapReadyCa
     }
 
     public void restartTime(View view){
-       //dummy method for restarting time
+        timer.setBase(SystemClock.elapsedRealtime());
     }
 
 
