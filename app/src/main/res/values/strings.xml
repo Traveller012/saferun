@@ -36,10 +36,9 @@
     <string name="driver_resolve_emergency">Clear Emergency</string>
 
     <string name="observer_list_header">Observers</string>
-    <string name="observer_role_desc">Description of the Observer Role.
-                                    Description of the Observer Role.
-                                    Description of the Observer Role.
-                                    Description of the Observer Role. </string>
+    <string name="observer_role_desc">Description of Role.
+                                    Description of Role.
+                                    Description of Role.</string>
     <string name="facilitator_role_desc">Description of Role\nDescription of Role\nDescription of Role\nDescription of Role</string>
     <string name="title_activity_observer_in_position">Map</string>
     <string name="observer_in_position">In Position!</string>

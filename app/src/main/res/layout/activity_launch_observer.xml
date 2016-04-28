@@ -5,12 +5,14 @@
     android:gravity="center"
     android:orientation="vertical">
 
+
+
     <Button
         style="?android:attr/borderlessButtonStyle"
         android:id="@+id/observer_back_to_main"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight=".5"
+        android:layout_weight="1"
         android:layout_margin="10dp"
         android:layout_marginTop="25dp"
         android:layout_gravity="top"
@@ -22,6 +24,7 @@
         android:enabled="true"
         />
 
+
     <TextView
         android:id="@+id/observer_header"
         android:layout_width="match_parent"
@@ -30,52 +33,118 @@
         android:layout_weight="1"
         android:layout_margin="10dp"
         android:text="@string/observer_list_header"
-        android:textAppearance="@style/TitleText">
+        android:textAppearance="@style/LargeText">
     </TextView>
+
 
     <TextView
         android:id="@+id/observer_role_description"
         android:layout_width="match_parent"
-        android:textAlignment="center"
         android:layout_height="0dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_weight="3"
+        android:layout_weight="1.5"
         android:text="@string/observer_role_desc"
         android:textAppearance="@style/DescText">
     </TextView>
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:fillViewport="true"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:layout_gravity="center">
+   <TextView
+       android:id="@+id/select_facilitator"
+       android:text="@string/select_facilitator"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
+       android:padding="2dp"
+       android:layout_marginTop="2dp"
+       android:textAlignment="center"
+       android:layout_height="wrap_content"
+       android:background="@color/colorLightBlue"
+       android:textAppearance="@style/DescText">
+   </TextView>
 
-        <RadioGroup
-            android:id="@+id/observer_choices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+   <TextView
+       android:id="@+id/scott"
+       android:text="@string/scott"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
+       android:layout_height="0dp"
+       android:layout_marginTop="10dp"
+       android:layout_weight="1"
+       android:textAppearance="@style/SmallerDescText"
+       android:clickable="true"
+       android:textAlignment="center"
+       android:onClick="setButton">
+   </TextView>
 
+   <TextView
+       android:id="@+id/suhani"
+       android:text="@string/suhani"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:textAppearance="@style/SmallerDescText"
+       android:clickable="true"
+       android:textAlignment="center"
+       android:onClick="setButton">
+   </TextView>
 
-        </RadioGroup>
+   <TextView
+       android:id="@+id/angela"
+       android:text="@string/angela"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:textAppearance="@style/SmallerDescText"
+       android:clickable="true"
+       android:textAlignment="center"
+       android:onClick="setButton">
+   </TextView>
 
-    </ScrollView>
+   <TextView
+       android:id="@+id/khal"
+       android:text="@string/khal"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:textAppearance="@style/SmallerDescText"
+       android:clickable="true"
+       android:textAlignment="center"
+       android:onClick="setButton">
+   </TextView>
 
-    <Button
-        style="?android:attr/borderlessButtonStyle"
-        android:id="@+id/observer_join_run"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:layout_margin="10dp"
-        android:text="@string/join_run"
-        android:background="@drawable/biggreenbtn"
-        android:textAppearance="@style/BigGreenButtonText"
-        android:textAllCaps="false"
-        android:onClick="observerJoinRun"
-        android:enabled="true"
-        />
+   <TextView
+       android:id="@+id/gail"
+       android:text="@string/gail"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:textAppearance="@style/SmallerDescText"
+       android:clickable="true"
+       android:textAlignment="center"
+       android:onClick="setButton">
+   </TextView>
+
+   <Button
+       style="?android:attr/borderlessButtonStyle"
+       android:id="@+id/observer_join_run"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="2"
+       android:layout_margin="10dp"
+       android:textAppearance="@style/BigGreenButtonText"
+       android:textAllCaps="false"
+       android:onClick="observerJoinRun"
+       android:enabled="true">
+
+   </Button>
 
 </LinearLayout>

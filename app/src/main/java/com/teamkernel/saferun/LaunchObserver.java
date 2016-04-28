@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -24,6 +25,8 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 import java.util.HashMap;
+
+import static com.teamkernel.saferun.R.color.colorLightGreen;
 
 public class LaunchObserver extends AppCompatActivity  implements LocationListener {
     Firebase rootFirebase = new Firebase("https://saferun.firebaseio.com");
@@ -40,7 +43,7 @@ public class LaunchObserver extends AppCompatActivity  implements LocationListen
 
 
         //clear any run key
-        MyUtils.removeFromSharedPrefs("runKey",this);
+       /* MyUtils.removeFromSharedPrefs("runKey",this);
 
         name = MyUtils.getValueFromSharedPrefs("name", this);
 
@@ -104,7 +107,7 @@ public class LaunchObserver extends AppCompatActivity  implements LocationListen
 
             }
 
-        });
+        });*/
     }
 
     @Override
@@ -156,8 +159,11 @@ public class LaunchObserver extends AppCompatActivity  implements LocationListen
 
     public void observerJoinRun(View view){
 
+        //start next activity
+        Intent intent = new Intent(this, ObserverInPosition.class);
+        startActivity(intent);
         //create observer
-        boolean result = MyUtils.createNewObserver(new Observer(name, false),this);
+        /*boolean result = MyUtils.createNewObserver(new Observer(name, false),this);
 
         if(result){
             updateMyLocation();
@@ -168,11 +174,22 @@ public class LaunchObserver extends AppCompatActivity  implements LocationListen
         else {
             //toast user to choose a run first
             Toast.makeText(this, "Please choose a run first", Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
     }
 
     public void observerGoBackToMain(View view){
         finish();
+    }
+
+    public void setButton(View view) {
+        Button button = (Button) findViewById(R.id.observer_join_run);
+        TextView selectedFacilitator = (TextView) view;
+        String text = selectedFacilitator.getText().toString();
+        String message = "Join " + text + "'s Run!";
+        button.setText(message);
+        button.setBackgroundColor(getResources().getColor(colorLightGreen));
+
+
     }
 }
