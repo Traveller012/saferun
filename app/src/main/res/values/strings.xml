@@ -12,7 +12,7 @@
     <string name="observer_integer">Observers: 72</string>
     <string name="driver_integer">Drivers: 26</string>
     <string name="title_activity_facilitator_map_view">Map</string>
-    <string name="facilitator_name">Facilitator Name: </string>
+    <string name="facilitator_name">Facilitator Name: Angela</string>
     <string name="end_run">End Run</string>
     <string name="restart_time">Restart Time</string>
     <string name="elapsed_time">Elapsed Time: </string>
