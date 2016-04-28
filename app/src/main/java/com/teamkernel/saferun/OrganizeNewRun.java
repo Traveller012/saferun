@@ -2,10 +2,14 @@ package com.teamkernel.saferun;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.SpannableString;
+import android.text.method.ScrollingMovementMethod;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -29,7 +33,11 @@ public class OrganizeNewRun extends AppCompatActivity {
     HashMap<String, Observer> observersMap = new HashMap<>();//observerKey vs Observer
     TextView drivers_text_view;
     TextView observers_text_view;
+    TextView observer_string_names_view;
+    TextView driver_string_names_view;
     String runKey;
+    String names_obs;
+    String names_drivs;
 
     //Facilitator 2 activity
 
@@ -38,12 +46,38 @@ public class OrganizeNewRun extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organize_new_run);
 
-        drivers_text_view = (TextView) findViewById(R.id.list_of_drivers);
+        observer_string_names_view = (TextView) findViewById(R.id.observers_list_names);
+        observer_string_names_view.setMovementMethod(new ScrollingMovementMethod());
+        driver_string_names_view = (TextView) findViewById(R.id.drivers_list_names);
+        driver_string_names_view.setMovementMethod(new ScrollingMovementMethod());
+
+
+        names_obs = getResources().getString(R.string.green_list_names1);
+        names_obs += getResources().getString(R.string.red_list_names1);
+        names_obs += getResources().getString(R.string.green_list_names4);
+        names_obs += getResources().getString(R.string.red_list_names2);
+        names_obs += getResources().getString(R.string.green_list_names2);
+        names_obs += getResources().getString(R.string.green_list_names3);
+
+        names_drivs = getResources().getString(R.string.green_list_names3);
+
+
+        observer_string_names_view.setText(Html.fromHtml(names_obs));
+        observer_string_names_view.setTextColor(getResources().getColor(R.color.colorLightGreen));
+
+        driver_string_names_view.setText(Html.fromHtml(names_drivs));
+        driver_string_names_view.setTextColor(getResources().getColor(R.color.colorRed));
+
+
+
+    }
+
+        /*drivers_text_view = (TextView) findViewById(R.id.list_of_drivers);
         observers_text_view = (TextView) findViewById(R.id.list_of_observers);
 
         runKey = MyUtils.getValueFromSharedPrefs("runKey",this);
         if(runKey.isEmpty()){
-            //something is seriously wrong
+            something is seriously wrong
             finish();
         }
 
@@ -206,7 +240,7 @@ public class OrganizeNewRun extends AppCompatActivity {
         }
         observers_text_view.setText(Html.fromHtml(observers_list));
 
-    }
+    }*/
 
     public void startRunTime(View view){
         Intent intent = new Intent(this, FacilitatorMapView.class);
@@ -222,6 +256,8 @@ public class OrganizeNewRun extends AppCompatActivity {
        //dummy method
     }
 
+    /*
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
         if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
@@ -235,5 +271,5 @@ public class OrganizeNewRun extends AppCompatActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }*/
 }

@@ -8,9 +8,8 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.25"
-        android:layout_marginBottom="25dp"
-        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <Button
@@ -22,7 +21,7 @@
             android:layout_margin="10dp"
             android:text="@string/exit"
             android:background="@drawable/bigredbtn"
-            android:textAppearance="@style/BigRedButtonText"
+            android:textAppearance="@style/SmallRedButtonText"
             android:textAllCaps="false"
             android:onClick="exit"
             android:enabled="true" />
@@ -36,7 +35,7 @@
             android:layout_margin="10dp"
             android:text="@string/refresh"
             android:background="@drawable/bigbluebtn"
-            android:textAppearance="@style/BigBlueButtonText"
+            android:textAppearance="@style/SmallBlueButtonText"
             android:textAllCaps="false"
             android:onClick="refresh"
             android:enabled="true" />
@@ -66,50 +65,62 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginTop="45dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-        <ScrollView
-            android:id="@+id/facilitator_scroll_observers"
+        <TextView
+            android:layout_gravity="top"
+            android:textAppearance="@style/DescText"
+            android:textColor="@color/colorLightBlue"
+            android:id="@+id/list_of_observers"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:fillViewport="true"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:text="@string/observers">
+        </TextView>
 
-            <TextView
-                android:layout_gravity="top"
-                android:textAppearance="@style/DescText"
-                android:id="@+id/list_of_observers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/observers"
-                android:textAlignment="center">
-            </TextView>
-
-        </ScrollView>
-
-        <ScrollView
-            android:id="@+id/facilitator_scroll_drivers"
+        <TextView
+            android:layout_gravity="top"
+            android:id="@+id/list_of_drivers"
+            android:textColor="@color/colorLightBlue"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:fillViewport="true"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_gravity="top"
-                android:id="@+id/list_of_drivers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/drivers"
-                android:textAppearance="@style/DescText"
-                android:textAlignment="center">
-            </TextView>
-
-        </ScrollView>
+            android:layout_height="wrap_content"
+            android:text="@string/drivers"
+            android:textAppearance="@style/DescText">
+        </TextView>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/observers_list_names"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="22sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/drivers_list_names"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="22sp">
+        </TextView>
+
+    </LinearLayout>
+
 
     <Button
         style="?android:attr/borderlessButtonStyle"
@@ -124,4 +135,5 @@
         android:textAllCaps="false"
         android:onClick="startRunTime"
         android:enabled="true" />
+
 </LinearLayout>

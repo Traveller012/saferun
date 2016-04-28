@@ -76,4 +76,23 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="GreenListText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorLightGreen</item>
+    </style>
+
+    <style name="SmallGreenButtonText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorGreenText</item>
+    </style>
+
+    <style name="SmallBlueButtonText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorBlueText</item>
+    </style>
+
+    <style name="SmallRedButtonText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorRedText</item>
+    </style>
 </resources>
