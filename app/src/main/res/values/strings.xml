@@ -43,7 +43,7 @@
     <string name="title_activity_observer_in_position">Map</string>
     <string name="observer_in_position">In Position!</string>
     <string name="title_activity_observer_map_view">Map</string>
-    <string name="observer_create_emergency">EMERGENCY</string>
+    <string name="observer_create_emergency">Emergency!</string>
     <string name="observer_clear_emergency">CLEAR EMERGENCY</string>
     <string name="facilitator_header">Facilitator</string>
     <string name="drivers">Drivers</string>
