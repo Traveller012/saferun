@@ -9,15 +9,18 @@
     <TextView
         android:textAppearance="@style/SmallText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="@string/facilitator_name"
         android:textAlignment="center"
+        android:gravity="center"
         />
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="5dp"
         android:gravity="center"
@@ -28,13 +31,13 @@
             style="?android:attr/borderlessButtonStyle"
             android:id="@+id/end_run"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:text="@string/end_run"
             android:background="@drawable/bigredbtn"
-            android:textAppearance="@style/BigRedButtonText"
+            android:textAppearance="@style/SmallRedButtonText"
             android:textAllCaps="false"
             android:onClick="endRunConfirmation"
             android:enabled="true"/>
@@ -48,8 +51,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="@string/restart_time"
-            android:background="@drawable/biggreenbtn"
-            android:textAppearance="@style/BigGreenButtonText"
+            android:background="@drawable/bigbluebtn"
+            android:textAppearance="@style/SmallBlueButtonText"
             android:textAllCaps="false"
             android:onClick="restartTime"
             android:enabled="true"/>
@@ -60,21 +63,20 @@
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="12"
         class="com.google.android.gms.maps.SupportMapFragment"
         />
 
-    <TextView
+
+    <Chronometer
+        android:id="@+id/chronometer1"
+        android:textColor="@color/colorGreyFont"
         android:textAppearance="@style/DescText"
-        android:textAlignment="center"
-        android:gravity="bottom"
-        android:layout_marginBottom="25dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight=".8"
-        android:text="@string/elapsed_time"
-        android:layout_marginTop="5dp"
-        />
+        android:gravity="center"
+        android:layout_weight="2"
+        android:text="Chronometer"/>
 
 </LinearLayout>
 
