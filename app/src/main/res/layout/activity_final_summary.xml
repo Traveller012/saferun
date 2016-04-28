@@ -49,6 +49,7 @@
         android:text="@string/summary_details"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:textAlignment="center"
         />
 
 <!--TextView
