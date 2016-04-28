@@ -49,7 +49,7 @@ public class ObserverMapView extends FragmentActivity implements OnMapReadyCallb
 
 
     public void observerExitRunConfirmation(View view) {
-        Intent intent = new Intent(this, ObserverExitRunConfirmation.class);
+        Intent intent = new Intent(this, FacilitatorExitRunConfirmation.class);
         startActivity(intent);
     }
 
