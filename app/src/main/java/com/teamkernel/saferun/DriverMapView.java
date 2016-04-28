@@ -1,15 +1,18 @@
 package com.teamkernel.saferun;
 
 import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Chronometer;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -17,20 +20,27 @@ public class DriverMapView extends FragmentActivity implements OnMapReadyCallbac
 
     public final static String EXTRA_TRACEBACK = "com.teamkernel.saferun.TRACEBACK";
     private GoogleMap mMap;
+    Chronometer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_map_view);
+
+        timer = (Chronometer) findViewById(R.id.chronometer2);
+        timer.setBase(SystemClock.elapsedRealtime());
+        timer.setFormat("Elapsed Time: %s");
+        timer.start();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        //SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                //.findFragmentById(R.id.map);
-        //mapFragment.getMapAsync(this);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     public void exitRunConfirmation(View view) {
 
-        Intent intent = new Intent(this, DriverExitRunConfirmation.class);
+        Intent intent = new Intent(this, FacilitatorExitRunConfirmation.class);
         startActivity(intent);
     }
 
@@ -74,8 +84,8 @@ public class DriverMapView extends FragmentActivity implements OnMapReadyCallbac
 
         // Add a marker in Sydney and move the camera
 
-      LatLng sydney = new LatLng(-34, 151);
-      mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-      mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+       LatLng sydney = new LatLng(40.809527, -73.960269);
+       mMap.addMarker(new MarkerOptions().position(sydney).title("You are here"));
+       mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,16));
     }
 }

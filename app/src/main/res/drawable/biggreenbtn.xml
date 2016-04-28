@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item >
-        <shape android:shape="rectangle"  android:padding="20dp">
+    <item>
+        <shape android:shape="rectangle"  android:padding="20dp" android:id="@+id/greenbutton">
             <corners android:radius="20dip" />
             <solid android:color="@color/colorLightGreen"/>
         </shape>
