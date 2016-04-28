@@ -39,6 +39,7 @@
         android:layout_marginTop="25dp"
         android:textAppearance="@style/TitleText"
         android:textAlignment="center"
+        android:gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         />
@@ -46,7 +47,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:text="@string/end_run_warning"
         android:textAppearance="@style/DescText"
         android:textAlignment="center"
