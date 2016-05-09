@@ -38,7 +38,7 @@ public class DriverMapView extends FragmentActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
     }
 
-    public void exitRunConfirmation(View view) {
+    public void observerExitRunConfirmation(View view) {
 
         Intent intent = new Intent(this, FacilitatorExitRunConfirmation.class);
         startActivity(intent);
@@ -48,7 +48,7 @@ public class DriverMapView extends FragmentActivity implements OnMapReadyCallbac
     public void driverResolveEmergency(View view) {
 
         //assuming emergency key is set
-        MyUtils.removeEmergency(this);
+        //MyUtils.removeEmergency(this);
 
     }
 

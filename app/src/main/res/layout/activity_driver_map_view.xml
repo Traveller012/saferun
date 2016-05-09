@@ -38,7 +38,7 @@
             android:background="@drawable/bigredbtn"
             android:textAppearance="@style/BigRedButtonText"
             android:textAllCaps="false"
-            android:onClick="exitRunConfirmation"
+            android:onClick="observerExitRunConfirmation"
             android:enabled="true"/>
 
         <Button
